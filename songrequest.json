@@ -1,0 +1,13 @@
+[
+  {
+    "id": "\"'\"$RANDOM\"'\"",
+    "eventType": "songAdded",
+    "subject": "genre/blues",
+    "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'",
+    "data": {
+      "artist": "John Lee Hooker",
+      "song": "Boom Boom"
+    },
+    "dataVersion": "1.0"
+  }
+]

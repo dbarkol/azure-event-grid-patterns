@@ -1,0 +1,1 @@
+# azure-event-grid-patterns

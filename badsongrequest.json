@@ -1,6 +1,6 @@
 [
   {
-    "id": "\"'\"$RANDOM\"'\"",
+    "id": "'"$RANDOM"'",
     "eventType": "songAdded",
     "subject": "genre/rock",
     "eventTime": "'`date +%Y-%m-%dT%H:%M:%S%z`'",

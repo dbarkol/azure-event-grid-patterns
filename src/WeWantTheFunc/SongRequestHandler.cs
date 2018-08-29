@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.EventGrid.Models;
 using Microsoft.Azure.WebJobs.Host;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 
 namespace WeWantTheFunc
 {
@@ -16,7 +17,7 @@ namespace WeWantTheFunc
         [FunctionName("SongRequestHandler")]
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)]HttpRequest req, 
-            TraceWriter log)
+            ILogger log)
         {
             // Get the body of the request
             var requestBody = new StreamReader(req.Body).ReadToEnd();
@@ -40,7 +41,7 @@ namespace WeWantTheFunc
             else if (eventTypeHeaderValue == "Notification")
             {
                 // Handle the song request
-                log.Info(requestBody);
+                log.LogInformation(requestBody);
                 var events = JsonConvert.DeserializeObject<EventGridEvent[]>(requestBody);
 
                 // Reject the request if it does not
